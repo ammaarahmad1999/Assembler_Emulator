@@ -1,0 +1,4 @@
+ERROR: A duplicate label was found on line 4
+ERROR: Invalid label name on line 10
+ERROR: Illegal mnemonic on line 11
+ERROR: Illegal mnemonic on line 12

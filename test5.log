@@ -1,0 +1,6 @@
+ERROR: A non numerical value: val2 present, data or set instruction requires numeric value on line 3
+ERROR: A non numerical value: val1 present, data or set instruction requires numeric value on line 4
+ERROR: A non numerical value: 0xfdh present, data or set instruction requires numeric value on line 6
+ERROR: A non numerical value: 665d present, data or set instruction requires numeric value on line 7
+ERROR: Invalid label name on line 8
+ERROR: Illegal mnemonic on line 8
