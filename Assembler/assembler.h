@@ -36,6 +36,8 @@ class Assembler{
         // Constructor call this function to assemble the code
         void assemble();
     public:
+        // Path to folder containing assembly line code
+        static string folderPath;
         Assembler(string input);
 };
 

@@ -6,17 +6,17 @@
 #include "util.h"
 
 using namespace std;
-
+// Change this constant in order  
+string Assembler::folderPath =  "../Assembly_Codes/";
 
 Assembler::Assembler(string input) {
-	input = "../Assembly_Codes/" + input;
-	inputFilename = input;
+	inputFilename = folderPath + input;
     size_t pos=input.find(".asm");			
     if(pos!=string::npos)
-        input=input.substr(0,pos);
-    listFilename = input + ".l";
-    logFilename = input + ".log";
-    objectFilename = input + ".o";
+        input=input.substr(0,pos); 
+    listFilename = folderPath + input + ".l";
+    logFilename = folderPath + input + ".log";
+    objectFilename = folderPath + input + ".o";
 	assemble();
 }
 
