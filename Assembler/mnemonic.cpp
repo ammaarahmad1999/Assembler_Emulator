@@ -6,7 +6,7 @@ unordered_map<string, string> Mnemonic::mnemonicOpcodeMap;
 unordered_map<string, OperandType>Mnemonic::mnemonicOperandMap;
 void Mnemonic::readOpcodeFile(){
     ifstream file;
-    file.open("opcode.txt",ios::in);
+    file.open("../opcode.txt",ios::in);
     string mnemonic, opcode;			
 	file>>mnemonic>>opcode;
 	while(mnemonic!="end")					//loop for storing mnemonic-opcode key value pair in map

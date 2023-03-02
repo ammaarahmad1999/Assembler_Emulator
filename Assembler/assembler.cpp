@@ -9,8 +9,9 @@ using namespace std;
 
 
 Assembler::Assembler(string input) {
-    inputFilename = input;
-    size_t pos=input.find('.asm');			
+	input = "../Assembly_Codes/" + input;
+	inputFilename = input;
+    size_t pos=input.find(".asm");			
     if(pos!=string::npos)
         input=input.substr(0,pos);
     listFilename = input + ".l";
