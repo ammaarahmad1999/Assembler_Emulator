@@ -52,7 +52,7 @@ string Hexadecimal::AddPaddingToHex(string hex){
     if(!Number::isHex(hex))
         return empty;
     
-    return Util::AddPadding(hex, 8);
+    return Util::AddPadding(hex.substr(2), 8);
 }
 
 string Hexadecimal::ConvertBinaryToHex(string binary){

@@ -22,7 +22,7 @@ bool Number::isOctal(string octal){
 }
 
 bool Number::isHex(string hex){
-    if(hex.length() < 2 || hex[0] != '0' || hex[1] != 'x')
+    if(hex.length() <= 2 || hex[0] != '0' || hex[1] != 'x')
         return false;
     
     for (int i=2; i<hex.length(); i++){
