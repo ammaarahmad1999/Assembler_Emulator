@@ -7,6 +7,7 @@ using namespace std;
 char Hexadecimal::hexCharacter[16];
 unordered_map<string, char> Hexadecimal::binaryHex;
 unordered_map<char, string> Hexadecimal::characterToBinary;
+unordered_map<char, int>Hexadecimal::characterToInteger;
 string empty;
 
 void Hexadecimal::generateHexNumber(){
@@ -47,9 +48,16 @@ bool Hexadecimal::isValidHex(string hex){
     return true;
 }
 
+string Hexadecimal::AddPaddingToHex(string hex){
+    if(!Number::isHex(hex))
+        return empty;
+    
+    return Util::AddPadding(hex, 8);
+}
+
 string Hexadecimal::ConvertBinaryToHex(string binary){
     string hex;
-    binary = Util::AddPadding(binary);
+    binary = Util::AddPadding(binary, 32);
     int length = binary.length();
     for (int i=0; i<length; i+=4)
         hex.push_back(binaryHex[binary.substr(i,4)]);
@@ -84,5 +92,21 @@ string Hexadecimal::ConvertDecimalToHex(int decimal){
 }
 
 int Hexadecimal::ConvertHexToInteger(string hex){
-    return stoi(hex, 0, 16);
+    int number = 0;
+    for (char ch : hex){
+        number <<= 4;
+        number |= characterToInteger[ch];
+    }
+
+    return number;
+}
+
+unsigned int Hexadecimal::ConvertHexToUnsignedInteger(string hex){
+    unsigned int number = 0;
+    for (char ch : hex){
+        number <<= 4;
+        number |= characterToInteger[ch];
+    }
+
+    return number;
 }

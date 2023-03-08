@@ -25,7 +25,7 @@ string Util::trim(string token)		//function to remove leading and trailing space
 	return token.substr(start, end-start+1);
 }
 
-string Util::AddPadding(string binary){
-    string padding(32-binary.length(), '0');
-    return padding + binary;
+string Util::AddPadding(string number, int length){
+    string padding(length-number.length(), '0');
+    return padding + number;
 }

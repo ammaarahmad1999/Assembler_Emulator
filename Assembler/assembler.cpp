@@ -118,8 +118,9 @@ Token Assembler::operandHexValue(string operand, int lineNumber){
 		return Token(hex, error.str());
 	}
 
-	if(Number::isHex(operand))
-		return Token(operand, error.str());
+	hex = Hexadecimal::AddPaddingToHex(operand);
+	if(hex != "")
+		return Token(hex, error.str());
 	
 	hex = Hexadecimal::ConvertDecimalToHex(operand);
 	if(hex != "")
@@ -156,7 +157,7 @@ void Assembler::generateListAndObjectFile(){
 			listFile<<line.location+" "+line.byteCode+"\t"+line.label+":\t"
 			+line.mnemonic+"\t"+line.operand+"\n";
 		
-		byteCode = stol(line.byteCode,0,16);
+		byteCode = Hexadecimal::ConvertHexToUnsignedInteger(line.byteCode);
 		objectFile.write((char*)&byteCode, 4);
 	}
 
@@ -218,7 +219,7 @@ bool Assembler::firstPass(){
 			error = true;
 		}
 		else if(mnemonic.token == "set")
-			labels[label.token] = stoi(hex.token, 0, 16);
+			labels[label.token] = Hexadecimal::ConvertHexToInteger(hex.token);
 		
 		tuples.push_back(ListFileCode(locationHex, label.token, mnemonic.token, operand.token));
 
@@ -266,7 +267,7 @@ bool Assembler::secondPass(){
 				else {
 					operand = iterator->second;
 					if(type == OFFSET)
-						operand = operand - stoi(line.location, 0, 16) - 1;
+						operand = operand - Hexadecimal::ConvertHexToInteger(line.location) - 1;
 					code = Hexadecimal::ConvertDecimalToHex(operand) + opcode;
 					usedLabels.insert(line.operand);
 				}	
