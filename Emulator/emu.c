@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+static char* folderPath =  "../Assembly_Codes/";
 struct opcode 								//instruvtion set architecture definiton
 {
 	char* mnemonic;
@@ -17,14 +18,19 @@ int main(int argc, char** argv)
 		printf("-before show memory dump before execution\n");
 		return 0;
 	}
-	char *input = argv[2];					//object filename
-	char *type = argv[1];					//instruction type
-	struct opcode arr[21]={{"ldc","value"},{"adc","value"},{"ldl","offset"},
+    
+    struct opcode arr[21]={{"ldc","value"},{"adc","value"},{"ldl","offset"},
 	{"stl","offset"},{"ldnl","offset"},{"stnl","offset"},{"add",""},
 	{"sub",""},{"shl",""},{"shr",""},{"adj","value"},{"a2sp",""},{"sp2a",""},
 	{"call","offset"},{"return",""},{"brz","offset"},{"brlz","offset"},
 	{"br","offset"},{"halt",""},{"data","value"},{"set","value"}};
-	FILE *fin=fopen(input,"rb");			//reading machine code in binary mode
+
+    char *type = argv[1];					//instruction type
+    char *inputFile;                        //object filename
+    strcpy(inputFile, folderPath);
+	strcat(inputFile, argv[2]);	
+	
+	FILE *fin=fopen(inputFile,"rb");		//reading machine code in binary mode
 	int n=0, error=0;
 	while(!feof(fin))						//read until end of file
 	{
