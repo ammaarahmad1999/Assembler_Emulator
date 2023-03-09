@@ -31,13 +31,13 @@ Note - All files generated are in present in subdirectory **Assembly_Codes**
 **gcc emu.c -o emu** \
 **./emu -[operation] [filename.o]**
 
-**operation** denotes operation to be performed. It supports four operations \
+**operation** denotes operation to be performed. It supports four operations 
 1. trace - It shows memory and register information after executing each line 
 2. before - It shows memory dump before execution of object file 
 3. after - It shows memory dump after execution of object file 
 4. isa - It prints the instructions set in terminal - Same as instructions.txt
 
 **filename.o** \
-Object file to be executed - Execution terminates when HALT is encountered or \
+Object file to be executed - Execution terminates when HALT is encountered or
 number of lines executed equals instructions read from object file. 
 
