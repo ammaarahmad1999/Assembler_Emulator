@@ -1,4 +1,4 @@
-#**Assembler and Emulator**
+**#Assembler and Emulator**
 
 There are 3 subdirectories 
 1. Assembler - Contains all cpp codes for Assembler
@@ -9,11 +9,11 @@ Along with these, it contain 2 txt files
 1. instructions.txt - Assembly Language Mnemonic, Opcode and OperandType 
 2. opcode.txt - Assembly Language Mnemonic and Opcode
 
-##**Running an Assembler (2 Step process)**
+**##Running an Assembler (2 Step process)**
 
 **cd Assembler** \
 **g++ asm.cpp -o asm** \
-**./asm filename.asm** \
+**./asm filename.asm** 
 
 Here filename.asm denotes a assembly code to be assembled. \
 Default directory for filename is **"../Assembly_Codes/"** 
@@ -26,7 +26,7 @@ If their are no errors while assembling it generates 2 files \
 
 Note - All files generated are in present in subdirectory **Assembly_Codes** 
 
-##**Running an emulator**
+**##Running an emulator**
 
 **cd Emulator** \
 **gcc emu.c -o emu** \
@@ -39,6 +39,5 @@ Note - All files generated are in present in subdirectory **Assembly_Codes**
 4. isa - It prints the instructions set in terminal - Same as instructions.txt
 
 **filename.o** \
-Object file to be executed - Execution terminates when HALT is encountered or
-number of lines executed equals instructions read from object file. 
+Object file to be executed - Execution terminates when HALT is encountered or number of lines executed equals instructions read from object file. 
 
