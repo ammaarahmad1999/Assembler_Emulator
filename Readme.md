@@ -1,8 +1,8 @@
 **Assembler and Emulator**
 
 There are 3 subdirectories
-a) Assembler - Contains all cpp codes for Assembler
-b) Emulator - Contain emu.c file for Emulator
+a) Assembler - Contains all cpp codes for Assembler \
+b) Emulator - Contain emu.c file for Emulator \
 c) Assembly_Codes - Contains asm test files
 
 Along with these, it contain 2 txt files
