@@ -1,13 +1,13 @@
 **Assembler and Emulator**
 
 There are 3 subdirectories \
-a) Assembler - Contains all cpp codes for Assembler \
-b) Emulator - Contain emu.c file for Emulator \
-c) Assembly_Codes - Contains asm test files
+1. Assembler - Contains all cpp codes for Assembler
+2. Emulator - Contain emu.c file for Emulator
+3. Assembly_Codes - Contains asm test files
 
 Along with these, it contain 2 txt files \
-a) instructions.txt - Assembly Language Mnemonic, Opcode and OperandType \ 
-b) opcode.txt - Assembly Language Mnemonic and Opcode \
+1. instructions.txt - Assembly Language Mnemonic, Opcode and OperandType 
+2. opcode.txt - Assembly Language Mnemonic and Opcode
 
 **Running an Assembler (2 Step process)** \
 **cd Assembler** \
@@ -23,7 +23,7 @@ If their are no errors while assembling it generates 2 files \
 **filename.l** - Listing the memory location and opcode generated  for each line of assembly code \
 **filename.o** - Object file to be executed by emulator
 
-Note - All files generated are in present in subdirectory **Assembly_Codes** \ 
+Note - All files generated are in present in subdirectory **Assembly_Codes** 
 
 **Running an emulator**
 
@@ -32,9 +32,9 @@ Note - All files generated are in present in subdirectory **Assembly_Codes** \
 **./emu -[operation] [filename.o]**
 
 **operation** denotes operation to be performed. It supports four operations \
-1. trace - It shows memory and register information after executing each line \
-2. before - It shows memory dump before execution of object file \
-3. after - It shows memory dump after execution of object file \
+1. trace - It shows memory and register information after executing each line 
+2. before - It shows memory dump before execution of object file 
+3. after - It shows memory dump after execution of object file 
 4. isa - It prints the instructions set in terminal - Same as instructions.txt
 
 **filename.o** \
